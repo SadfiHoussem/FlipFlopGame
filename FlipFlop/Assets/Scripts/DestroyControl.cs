@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyControl : MonoBehaviour {
+public class DestroyControl : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
 
-	void OnCollisionEnter2D(Collision2D collision) {
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
 
-		if (collision.gameObject.tag == "obstacle"||collision.gameObject.tag == "coin") {
-			Destroy (collision.gameObject);
-		
-		
-		}
-	}
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "obstacle" || collision.gameObject.tag == "coin")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }

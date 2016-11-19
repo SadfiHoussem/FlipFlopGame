@@ -15,16 +15,16 @@ public class Util : ScriptableObject
         return url;
     }
 
-  /*  public static void FriendPictureCallback(IResult result)
-    {
-        if (result.Error != null)
-        {
-            Debug.LogError(result.Error);
-            return;
-        }
+    /*  public static void FriendPictureCallback(IResult result)
+      {
+          if (result.Error != null)
+          {
+              Debug.LogError(result.Error);
+              return;
+          }
 
-        //GameStateManager.FriendTexture = result.Texture;
-    }*/
+          //GameStateManager.FriendTexture = result.Texture;
+      }*/
 
     public static Dictionary<string, string> RandomFriend(List<object> friends)
     {
@@ -46,16 +46,16 @@ public class Util : ScriptableObject
         }
         return profile;
     }
-    
-    public static List<object> DeserializeScores(string response) 
+
+    public static List<object> DeserializeScores(string response)
     {
 
         var responseObject = Json.Deserialize(response) as Dictionary<string, object>;
         object scoresh;
         var scores = new List<object>();
-        if (responseObject.TryGetValue ("data", out scoresh)) 
+        if (responseObject.TryGetValue("data", out scoresh))
         {
-            scores = (List<object>) scoresh;
+            scores = (List<object>)scoresh;
         }
 
         return scores;
@@ -72,17 +72,17 @@ public class Util : ScriptableObject
         }
         return friends;
     }
-    
-    
-    
-    public static void DrawActualSizeTexture (Vector2 pos, Texture texture, float scale = 1.0f)
+
+
+
+    public static void DrawActualSizeTexture(Vector2 pos, Texture texture, float scale = 1.0f)
     {
-        Rect rect = new Rect (pos.x, pos.y, texture.width * scale , texture.height * scale);
+        Rect rect = new Rect(pos.x, pos.y, texture.width * scale, texture.height * scale);
         GUI.DrawTexture(rect, texture);
     }
-    public static void DrawSimpleText (Vector2 pos, GUIStyle style, string text)
+    public static void DrawSimpleText(Vector2 pos, GUIStyle style, string text)
     {
-        Rect rect = new Rect (pos.x, pos.y, Screen.width, Screen.height);
-        GUI.Label (rect, text, style);
+        Rect rect = new Rect(pos.x, pos.y, Screen.width, Screen.height);
+        GUI.Label(rect, text, style);
     }
 }
